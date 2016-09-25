@@ -4,8 +4,11 @@ import exeption.NoElementFound;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import utils.WebElementActions;
+import utils.ClassNameUtil;
 
 import java.io.IOException;
+
+import static utils.ClassNameUtil.getCurrentClassName;
 
 /**
  * Created by Dell-user on 9/13/2016.
@@ -17,8 +20,9 @@ public class LoginPage {
     public LoginPage(WebDriver driver) {
         web = new WebElementActions(driver);
     }
-    //private static final Logger log = Logger.getLogger(ClassNameUtil.getCurrentClassName());
-    static final Logger log = Logger.getLogger(LoginPage.class);
+    private static final Logger log = Logger.getLogger(getCurrentClassName());
+    //static final Logger log = Logger.getLogger(LoginPage.class);
+
 
 
     public void fillLoginForm(String email, String password) throws NoElementFound {
